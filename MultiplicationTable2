@@ -3,26 +3,20 @@ import java.util.Scanner;
 public class MultiplicationTable {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
+        int size;
         out.println("Welcome to Multiplication Tables");
         out.println();
         out.println("How large would you like to see them? Please enter a number less than 20");
-        int size = keyboard.nextInt();
-        int rows = -1;
-        int total;
-
-       if (size <20){
-
-           while (rows++ < size) {
-            for (int i = 0; i <= size; i++) {
-                    total = rows * i;
-                    System.out.println(rows + " * " + i + " = " + total);
-                }
+        size = keyboard.nextInt();
+        while (size > 20 || size < 1) {
+            out.println("Please enter a number between 1-20");
+            size = keyboard.nextInt();
+        }
+        for (int row = 0; row <= size; row++) {
+            for (int col = 0; col <= size; col++) {
+                out.println(size + "*" + row + "=" + (size * row));
             }
-       }
-       else {System.out.println("That number is not less than 20, we discussed this.");
-
         }
     }
 }
-
 
