@@ -1,0 +1,157 @@
+import static java.lang.System.out;
+public class Temperatures2 {
+    public static int sum(int[][] values) {
+        int total = 0;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values.length; j++) {
+                total += values[i][j];
+            }
+        }
+        return total;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("Temperature Calculator");
+        int[][] temps = {
+                {68, 70, 76, 70, 68, 71, 75},
+                {76, 76, 87, 84, 82, 75, 83},
+                {73, 72, 81, 78, 76, 73, 77},
+                {64, 65, 69, 68, 70, 74, 72},
+        };
+        String[] time = {"7 AM", "3 PM", "7 PM", "3 AM"};
+        String[] day = {"Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sun"};
+
+        int columnTotal = 0;
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotal += temps[i][0];
+        }
+        float average = columnTotal / (float) temps.length;
+
+        int columnTotal1 = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotal1 += temps[i][1];
+        }
+        float average2 = columnTotal1 / (float) temps.length;
+
+        int columnTotal2 = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotal2 += temps[i][2];
+        }
+        float average3 = columnTotal1 / (float) temps.length;
+        int columnTotal3 = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotal3 += temps[i][3];
+        }
+        float average4 = columnTotal3 / (float) temps.length;
+
+        int columnTotalA = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotalA += temps[i][4];
+        }
+        float averageA = columnTotalA / (float) temps.length;
+
+        int columnTotalB = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotalB += temps[i][5];
+        }
+        float averageB = columnTotalB / (float) temps.length;
+
+        int columnTotalC = 0;
+
+        for (int i = 0; i < temps.length; i++)
+
+        {
+            columnTotalC += temps[i][6];
+        }
+        float averageC = columnTotalC / (float) temps.length;
+
+
+        int rowTotal = 0;
+
+        for (int j = 0; j < temps.length; j++)
+
+        {
+            rowTotal += temps[0][j];
+        }
+        float average5 = rowTotal / (float) temps.length;
+
+        int rowTotal1 = 0;
+
+        for (int j = 0; j < temps.length; j++)
+
+        {
+            rowTotal1 += temps[1][j];
+        }
+        float average6 = rowTotal1 / (float) temps.length;
+
+        int rowTotal2 = 0;
+
+        for (int j = 0; j < temps.length; j++)
+
+        {
+            rowTotal2 += temps[2][j];
+        }
+        float average7 = rowTotal2 / (float) temps.length;
+
+        int rowTotal3 = 0;
+
+        for (int j = 0; j < temps.length; j++)
+
+        {
+            rowTotal3 += temps[3][j];
+        }
+        float average8 = rowTotal3 / (float) temps.length;
+
+        int rowTotal4 = 0;
+
+        System.out.println();
+        System.out.println("The data provided are:");
+        for (int i=0; i< temps.length; i++) {
+            out.print(time[i] + ": ");
+            for(int j=0; j< temps[i].length; j++) {
+                out.print(temps[i][j] + ", ");
+            }
+            out.println();
+            }
+            System.out.println();
+        System.out.println("Based on that data, the following are the average temperatures for the week. ");
+        System.out.println();
+        System.out.println("Sun: " + average);
+        System.out.println("Mon: " + average2);
+        System.out.println("Tues: " + average3);
+        System.out.println("Wed: " + average4);
+        System.out.println("Thurs: " + averageA);
+        System.out.println("Fri: " + averageB);
+        System.out.println("Sat: " + averageC);
+        System.out.println();
+        System.out.println("7 AM: " + average5);
+        System.out.println("3 PM: " + average6);
+        System.out.println("7 PM: " + average7);
+        System.out.println("3 AM: " + average8);
+        System.out.println();
+        int total = sum(temps);
+        int divider = temps.length * 4;
+        float averageX = total / (float) divider;
+        System.out.println("The final average temperature for the week was: " + averageX);
+
+
+}
+}
