@@ -1,0 +1,55 @@
+package Microblog;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Menu {
+    static Scanner keyboard = new Scanner(System.in);
+    
+    public static void main(String[] args)
+    {
+        while(true) {
+            System.out.println("Main Menu");
+            askForItems();
+
+        }
+    }
+
+    public static MenuItems[] createMenu() {
+        MenuItems[] option = new MenuItems[5];
+
+        option[0] = new MenuItems("Create a new user");
+        option[1] = new MenuItems("Become an existing user");
+        option[2] = new MenuItems("Create a post as the current user");
+        option[3] = new MenuItems("Print all posts");
+        option[4] = new MenuItems("Print all users");
+
+        return option;
+    }
+
+    public static void printMenu(MenuItems[] option) {
+        for (int counter = 0; counter < option.length; counter++) {
+            System.out.println(counter + ". " + option[counter].getDescription());
+        }
+
+    }
+
+    public static void askForItems(MenuItems option) {
+        int item;
+
+        MenuItems[] menuItems = Menu.createMenu();
+        System.out.println("Enter desired option " +
+                "or 9 to end.");
+        do {
+            Menu.printMenu(menuItems);
+            item = keyboard.nextInt();
+            }
+            while
+                (item !=9);
+            keyboard.skip("\n");
+
+
+
+
+    }
+}
